@@ -279,7 +279,7 @@ public class UnitTypes{
                 ejectEffect = Fx.casing4;
                 shootSound = Sounds.bang;
 
-                bullet = new BasicBulletType(13f, 360){{
+                bullet = new BasicBulletType(13f, 235){{
                     pierce = true;
                     pierceBuilding = true;
                     pierceCap = 2;
@@ -290,7 +290,7 @@ public class UnitTypes{
                     fragVelocityMin = 0.4f;
 
                     hitEffect = Fx.blastExplosion;
-                    splashDamage = 96f;
+                    splashDamage = 68f;
                     splashDamageRadius = 27f;
 
                     fragBullets = 3;
@@ -897,7 +897,7 @@ public class UnitTypes{
 
                 bullet = new ShrapnelBulletType(){{
                     length = 90f;
-                    damage = 440f;
+                    damage = 360f;
                     width = 25f;
                     serrationLenScl = 7f;
                     serrationSpaceOffset = 60f;
@@ -930,7 +930,7 @@ public class UnitTypes{
 
                 rotationLimit = 80f;
 
-                bullet = new ArtilleryBulletType(3f, 160){{
+                bullet = new ArtilleryBulletType(3f, 145){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
                     lifetime = 70f;
@@ -940,7 +940,7 @@ public class UnitTypes{
                     keepVelocity = false;
                     ammoMultiplier = 4f;
                     splashDamageRadius = 80f;
-                    splashDamage = 420f;
+                    splashDamage = 340f;
                     backColor = Pal.sapBulletBack;
                     frontColor = lightningColor = Pal.sapBullet;
                     lightning = 5;
