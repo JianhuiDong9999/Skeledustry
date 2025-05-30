@@ -850,10 +850,10 @@ public class UnitTypes{
 
         toxopid = new UnitType("toxopid"){{
             drag = 0.1f;
-            speed = 0.5f;
+            speed = 0.55f;
             hitSize = 26f;
-            health = 22000;
-            armor = 13f;
+            health = 34000;
+            armor = 10f;
             lightRadius = 140f;
 
             rotateSpeed = 1.9f;
@@ -871,8 +871,8 @@ public class UnitTypes{
             legSpeed = 0.19f;
             ammoType = new ItemAmmoType(Items.graphite, 8);
 
-            legSplashDamage = 80;
-            legSplashRange = 60;
+            legSplashDamage = 120;
+            legSplashRange = 64;
 
             hovering = true;
             shadowElevation = 0.95f;
@@ -896,7 +896,7 @@ public class UnitTypes{
 
                 bullet = new ShrapnelBulletType(){{
                     length = 90f;
-                    damage = 110f;
+                    damage = 440f;
                     width = 25f;
                     serrationLenScl = 7f;
                     serrationSpaceOffset = 60f;
@@ -906,6 +906,10 @@ public class UnitTypes{
                     fromColor = Pal.sapBullet;
                     toColor = Pal.sapBulletBack;
                     shootEffect = smokeEffect = Fx.sparkShoot;
+
+                    status = StatusEffects.sapped;
+                    statusDuration = 60f * 3;
+
                 }};
             }});
 
@@ -925,19 +929,22 @@ public class UnitTypes{
 
                 rotationLimit = 80f;
 
-                bullet = new ArtilleryBulletType(3f, 50){{
+                bullet = new ArtilleryBulletType(3f, 160){{
                     hitEffect = Fx.sapExplosion;
                     knockback = 0.8f;
-                    lifetime = 80f;
+                    lifetime = 70f;
                     width = height = 25f;
                     collidesTiles = false;
+                    collides = true;
+                    keepVelocity = false;
                     ammoMultiplier = 4f;
                     splashDamageRadius = 80f;
-                    splashDamage = 75f;
+                    splashDamage = 420f;
                     backColor = Pal.sapBulletBack;
                     frontColor = lightningColor = Pal.sapBullet;
                     lightning = 5;
                     lightningLength = 20;
+                    lightningDamage = 45;
                     smokeEffect = Fx.shootBigSmoke2;
                     hitShake = 10f;
                     lightRadius = 40f;
@@ -947,21 +954,24 @@ public class UnitTypes{
                     status = StatusEffects.sapped;
                     statusDuration = 60f * 10;
 
-                    fragLifeMin = 0.3f;
+                    fragLifeMin = 0.75f;
                     fragBullets = 9;
+                    fragSpread = 40f;
+                    fragRandomSpread = 30f;
 
-                    fragBullet = new ArtilleryBulletType(2.3f, 30){{
+                    fragBullet = new ArtilleryBulletType(1.2f, 60){{
                         hitEffect = Fx.sapExplosion;
                         knockback = 0.8f;
                         lifetime = 90f;
                         width = height = 20f;
                         collidesTiles = false;
                         splashDamageRadius = 70f;
-                        splashDamage = 40f;
+                        splashDamage = 130f;
                         backColor = Pal.sapBulletBack;
                         frontColor = lightningColor = Pal.sapBullet;
                         lightning = 2;
                         lightningLength = 5;
+                        lightningDamage = 35;
                         smokeEffect = Fx.shootBigSmoke2;
                         hitShake = 5f;
                         lightRadius = 30f;
