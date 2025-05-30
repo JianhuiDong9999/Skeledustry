@@ -1192,18 +1192,18 @@ public class UnitTypes{
             rotateSpeed = 1f;
             flying = true;
             lowAltitude = true;
-            health = 22000;
+            health = 26000;
             engineOffset = 38;
             engineSize = 7.3f;
             hitSize = 58f;
-            armor = 13f;
+            armor = 22f;
             targetFlags = new BlockFlag[]{BlockFlag.reactor, BlockFlag.battery, BlockFlag.core, null};
             ammoType = new ItemAmmoType(Items.thorium);
 
-            BulletType fragBullet = new FlakBulletType(4f, 15){{
+            BulletType fragBullet = new FlakBulletType(4f, 25){{
                 shootEffect = Fx.shootBig;
                 ammoMultiplier = 4f;
-                splashDamage = 65f;
+                splashDamage = 85f;
                 splashDamageRadius = 25f;
                 collidesGround = true;
                 lifetime = 47f;
@@ -1226,7 +1226,9 @@ public class UnitTypes{
                 rotate = true;
 
                 bullet = new LaserBulletType(){{
-                    damage = 115f;
+                    damage = 335f;
+                    pierceCap = 3;
+                    pierceBuilding = true;
                     sideAngle = 20f;
                     sideWidth = 1.5f;
                     sideLength = 80f;
@@ -1240,8 +1242,12 @@ public class UnitTypes{
                 x = 11f;
                 y = 27f;
                 rotateSpeed = 2f;
-                reload = 9f;
+                reload = 18f;
                 shootSound = Sounds.shoot;
+
+                shoot.shots = 3;
+                shoot.shotDelay = 3f;
+
                 shadow = 7f;
                 rotate = true;
                 recoil = 0.5f;
@@ -1251,11 +1257,15 @@ public class UnitTypes{
             new Weapon("large-artillery"){{
                 y = -13f;
                 x = 20f;
-                reload = 12f;
+                reload = 24f;
                 ejectEffect = Fx.casing1;
                 rotateSpeed = 7f;
                 shake = 1f;
                 shootSound = Sounds.shoot;
+
+                shoot.shots = 3;
+                shoot.shotDelay = 3f;
+
                 rotate = true;
                 shadow = 12f;
                 shootY = 7.25f;
