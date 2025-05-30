@@ -930,7 +930,7 @@ public class UnitTypes{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 25f;
-                    collidesTiles = collides = true;
+                    collidesTiles = false;
                     ammoMultiplier = 4f;
                     splashDamageRadius = 80f;
                     splashDamage = 75f;
