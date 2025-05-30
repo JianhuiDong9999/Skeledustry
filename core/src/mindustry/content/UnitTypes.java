@@ -258,8 +258,8 @@ public class UnitTypes{
             speed = 0.4f;
             hitSize = 30f;
             rotateSpeed = 1.65f;
-            health = 24000;
-            armor = 18f;
+            health = 28000;
+            armor = 36f;
             mechStepParticles = true;
             stepShake = 0.75f;
             drownTimeMultiplier = 6f;
@@ -279,9 +279,10 @@ public class UnitTypes{
                 ejectEffect = Fx.casing4;
                 shootSound = Sounds.bang;
 
-                bullet = new BasicBulletType(13f, 80){{
+                bullet = new BasicBulletType(13f, 360){{
                     pierce = true;
-                    pierceCap = 10;
+                    pierceBuilding = true;
+                    pierceCap = 2;
                     width = 14f;
                     height = 33f;
                     lifetime = 15f;
@@ -289,23 +290,23 @@ public class UnitTypes{
                     fragVelocityMin = 0.4f;
 
                     hitEffect = Fx.blastExplosion;
-                    splashDamage = 18f;
-                    splashDamageRadius = 13f;
+                    splashDamage = 96f;
+                    splashDamageRadius = 27f;
 
                     fragBullets = 3;
                     fragLifeMin = 0f;
                     fragRandomSpread = 30f;
 
-                    fragBullet = new BasicBulletType(9f, 20){{
+                    fragBullet = new BasicBulletType(8f, 30){{
                         width = 10f;
                         height = 10f;
                         pierce = true;
                         pierceBuilding = true;
-                        pierceCap = 3;
+                        pierceCap = 2;
 
                         lifetime = 20f;
                         hitEffect = Fx.flakExplosion;
-                        splashDamage = 15f;
+                        splashDamage = 25f;
                         splashDamageRadius = 10f;
                     }};
                 }};
