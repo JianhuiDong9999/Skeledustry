@@ -281,7 +281,8 @@ public class UnitTypes{
 
                 bullet = new BasicBulletType(13f, 80){{
                     pierce = true;
-                    pierceCap = 10;
+                    pierceCap = 4;
+                    pierceBuilding = true;
                     width = 14f;
                     height = 33f;
                     lifetime = 15f;
@@ -564,10 +565,10 @@ public class UnitTypes{
                 shake = 14f;
                 shootY = 5f;
                 x = y = 0;
-                reload = 350f;
+                reload = 220f;
                 recoil = 0f;
 
-                cooldownTime = 350f;
+                cooldownTime = 220f;
 
                 shootStatusDuration = 60f * 2f;
                 shootStatus = StatusEffects.unmoving;
@@ -576,7 +577,7 @@ public class UnitTypes{
 
                 bullet = new LaserBulletType(){{
                     length = 460f;
-                    damage = 560f;
+                    damage = 360f;
                     width = 75f;
 
                     lifetime = 65f;
