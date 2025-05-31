@@ -267,6 +267,8 @@ public class UnitTypes{
             mechSideSway = 0.6f;
             ammoType = new ItemAmmoType(Items.thorium);
 
+            immunities = ObjectSet.with(StatusEffects.shocked);
+
             weapons.add(
             new Weapon("reign-weapon"){{
                 top = false;
@@ -279,7 +281,7 @@ public class UnitTypes{
                 ejectEffect = Fx.casing4;
                 shootSound = Sounds.bang;
 
-                bullet = new BasicBulletType(13f, 235){{
+                bullet = new BasicBulletType(13f, 115){{
                     pierce = true;
                     pierceBuilding = true;
                     pierceCap = 2;
