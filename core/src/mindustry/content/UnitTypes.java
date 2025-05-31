@@ -1186,27 +1186,27 @@ public class UnitTypes{
         }};
 
         eclipse = new UnitType("eclipse"){{
-            speed = 0.54f;
+            speed = 0.64f;
             accel = 0.04f;
             drag = 0.04f;
             rotateSpeed = 1f;
             flying = true;
             lowAltitude = true;
-            health = 26000;
+            health = 28000;
             engineOffset = 38;
             engineSize = 7.3f;
             hitSize = 58f;
-            armor = 22f;
+            armor = 30f;
             targetFlags = new BlockFlag[]{BlockFlag.reactor, BlockFlag.battery, BlockFlag.core, null};
             ammoType = new ItemAmmoType(Items.thorium);
 
-            BulletType fragBullet = new FlakBulletType(4f, 25){{
+            BulletType fragBullet = new FlakBulletType(6f, 25){{
                 shootEffect = Fx.shootBig;
                 ammoMultiplier = 4f;
                 splashDamage = 85f;
                 splashDamageRadius = 25f;
                 collidesGround = true;
-                lifetime = 47f;
+                lifetime = 40f;
 
                 status = StatusEffects.blasted;
                 statusDuration = 60f;
@@ -1227,7 +1227,7 @@ public class UnitTypes{
 
                 bullet = new LaserBulletType(){{
                     damage = 335f;
-                    pierceCap = 3;
+                    pierceCap = 4;
                     pierceBuilding = true;
                     sideAngle = 20f;
                     sideWidth = 1.5f;
@@ -1246,7 +1246,7 @@ public class UnitTypes{
                 shootSound = Sounds.shoot;
 
                 shoot.shots = 3;
-                shoot.shotDelay = 3f;
+                shoot.shotDelay = 2.5f;
 
                 shadow = 7f;
                 rotate = true;
@@ -1264,7 +1264,7 @@ public class UnitTypes{
                 shootSound = Sounds.shoot;
 
                 shoot.shots = 3;
-                shoot.shotDelay = 3f;
+                shoot.shotDelay = 2.5f;
 
                 rotate = true;
                 shadow = 12f;
@@ -2258,23 +2258,34 @@ public class UnitTypes{
 
                         rotateSpeed = 3.5f;
                         alternate = true;
-                        reload = 35f;
+                        reload = 50f;
                         recoil = 1f;
                         shootSound = Sounds.laser;
                         continuous = false;
                         immunities.add(StatusEffects.burning);
 
-                        bullet = new LaserBulletType(){{
-                            damage = 180f;
-                            recoil = 0f;
-                            sideAngle = 60f;
-                            sideWidth = 1f;
-                            sideLength = 70f;
-                            healPercent = 10f;
-                            collidesTeam = true;
-                            width = 24f;
-                            length = 280f;
-                            colors = new Color[]{Pal.heal.cpy().a(0.4f), Pal.heal, Color.white};
+                        bullet = new MultiBulletType(){{
+                            bullets = new BulletType[]{
+                                new LaserBulletType(){{
+                                    damage = 180f;
+                                    recoil = 0f;
+                                    sideAngle = 60f;
+                                    sideWidth = 1f;
+                                    sideLength = 70f;
+                                    healPercent = 10f;
+                                    collidesTeam = true;
+                                    width = 24f;
+                                    length = 280f;
+                                    colors = new Color[]{Pal.heal.cpy().a(0.4f), Pal.heal, Color.white};
+                                }}, new LightningBulletType(){{
+                                    lightning = 2;
+                                    damage = 55f;
+                                    lightningLength = 15;
+                                    lightningColor = Pal.heal;
+                                    lightningCone = 60f;
+                                }}
+                            };
+
                         }};
                     }});
                 }
