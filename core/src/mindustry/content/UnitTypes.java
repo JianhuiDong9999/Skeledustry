@@ -2247,8 +2247,8 @@ public class UnitTypes{
                 for(float sign : Mathf.signs){
                     weapons.add(new Weapon("plasma-laser-mount"){{
                         shadow = 20f;
-                        controllable = false;
-                        autoTarget = true;
+                        controllable = true;
+                        autoTarget = false;
                         mirror = false;
                         shake = 3f;
                         shootY = 7f;
@@ -2256,44 +2256,31 @@ public class UnitTypes{
                         x = 84f/4f * sign;
                         y = mountY;
 
-                        targetInterval = 20f;
-                        targetSwitchInterval = 35f;
-
                         rotateSpeed = 3.5f;
-                        reload = 170f;
+                        alternate = true;
+                        reload = 35f;
                         recoil = 1f;
-                        shootSound = Sounds.beam;
-                        continuous = true;
-                        cooldownTime = reload;
+                        shootSound = Sounds.laser;
+                        continuous = false;
                         immunities.add(StatusEffects.burning);
 
-                        bullet = new ContinuousLaserBulletType(){{
-                            maxRange = 90f;
-                            damage = 27f;
-                            length = 95f;
-                            hitEffect = Fx.hitMeltHeal;
-                            drawSize = 200f;
-                            lifetime = 155f;
-                            shake = 1f;
-
-                            shootEffect = Fx.shootHeal;
-                            smokeEffect = Fx.none;
-                            width = 4f;
-                            largeHit = false;
-
-                            incendChance = 0.03f;
-                            incendSpread = 5f;
-                            incendAmount = 1;
-
-                            healPercent = 0.4f;
+                        bullet = new LaserBulletType(){{
+                            damage = 180f;
+                            recoil = 0f;
+                            sideAngle = 60f;
+                            sideWidth = 1f;
+                            sideLength = 70f;
+                            healPercent = 10f;
                             collidesTeam = true;
-
-                            colors = new Color[]{Pal.heal.cpy().a(.2f), Pal.heal.cpy().a(.5f), Pal.heal.cpy().mul(1.2f), Color.white};
+                            width = 24f;
+                            length = 280f;
+                            colors = new Color[]{Pal.heal.cpy().a(0.4f), Pal.heal, Color.white};
                         }};
                     }});
                 }
             }
             abilities.add(new SuppressionFieldAbility(){{
+                range = 280f;
                 orbRadius = 5;
                 particleSize = 3;
                 y = -10f;
@@ -2306,7 +2293,7 @@ public class UnitTypes{
                 x = 70f/4f;
                 y = -26f/4f;
 
-                reload = 65f;
+                reload = 85f;
                 shake = 3f;
                 rotateSpeed = 2f;
                 shadow = 30f;
@@ -2314,7 +2301,8 @@ public class UnitTypes{
                 recoil = 4f;
                 cooldownTime = reload - 10f;
                 //TODO better sound
-                shootSound = Sounds.laser;
+                shootSound = Sounds.malignShoot;
+                range = 400f;
 
                 bullet = new EmpBulletType(){{
                     float rad = 100f;
@@ -2326,24 +2314,24 @@ public class UnitTypes{
                     timeIncrease = 3f;
                     timeDuration = 60f * 20f;
                     powerDamageScl = 3f;
-                    damage = 60;
+                    damage = 190;
                     hitColor = lightColor = Pal.heal;
                     lightRadius = 70f;
                     clipSize = 250f;
                     shootEffect = Fx.hitEmpSpark;
                     smokeEffect = Fx.shootBigSmoke2;
-                    lifetime = 60f;
+                    lifetime = 100f;
                     sprite = "circle-bullet";
                     backColor = Pal.heal;
                     frontColor = Color.white;
                     width = height = 12f;
                     shrinkY = 0f;
-                    speed = 5f;
+                    speed = 4f;
                     trailLength = 20;
                     trailWidth = 6f;
                     trailColor = Pal.heal;
                     trailInterval = 3f;
-                    splashDamage = 70f;
+                    splashDamage = 125f;
                     splashDamageRadius = rad;
                     hitShake = 4f;
                     trailRotation = true;
