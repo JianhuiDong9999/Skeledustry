@@ -3997,6 +3997,7 @@ public class Blocks{
         }};
 
         foreshadow = new ItemTurret("foreshadow"){{
+            canOverdrive = false;
             float brange = range = 500f;
 
             requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, Items.plastanium, 200, Items.silicon, 600));
@@ -4033,7 +4034,7 @@ public class Blocks{
             unitSort = UnitSorts.strongest;
             envEnabled |= Env.space;
 
-            coolantMultiplier = 0.4f;
+            coolantMultiplier = 0.5f;
             scaledHealth = 150;
 
             coolant = consumeCoolant(1f);
