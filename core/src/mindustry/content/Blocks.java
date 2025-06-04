@@ -3288,7 +3288,7 @@ public class Blocks{
         hail = new ItemTurret("hail"){{
             requirements(Category.turret, with(Items.copper, 40, Items.graphite, 17));
             ammo(
-                Items.graphite, new ArtilleryBulletType(3f, 15){{
+                Items.graphite, new ArtilleryBulletType(3f, 5){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 11f;
@@ -3301,7 +3301,7 @@ public class Blocks{
                     frontColor = Pal.graphiteAmmoFront;
                     despawnEffect = Fx.hitBulletColor;
                 }},
-                Items.silicon, new ArtilleryBulletType(3f, 25){{
+                Items.silicon, new ArtilleryBulletType(3f, 5){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 11f;
@@ -3320,7 +3320,7 @@ public class Blocks{
                     frontColor = Pal.siliconAmmoFront;
                     despawnEffect = Fx.hitBulletColor;
                 }},
-                Items.pyratite, new ArtilleryBulletType(3f, 30){{
+                Items.pyratite, new ArtilleryBulletType(3f, 15){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.8f;
                     lifetime = 80f;
