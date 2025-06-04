@@ -3288,27 +3288,28 @@ public class Blocks{
         hail = new ItemTurret("hail"){{
             requirements(Category.turret, with(Items.copper, 40, Items.graphite, 17));
             ammo(
-                Items.graphite, new ArtilleryBulletType(3f, 20){{
+                Items.graphite, new ArtilleryBulletType(3f, 15){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 11f;
                     collidesTiles = false;
-                    splashDamageRadius = 25f * 0.75f;
-                    splashDamage = 33f;
+                    splashDamageRadius = 8f * 4f;
+                    splashDamage = 26f;
+                    ammoMultiplier = 2f;
 
                     hitColor = backColor = trailColor = Pal.graphiteAmmoBack;
                     frontColor = Pal.graphiteAmmoFront;
                     despawnEffect = Fx.hitBulletColor;
                 }},
-                Items.silicon, new ArtilleryBulletType(3f, 20){{
+                Items.silicon, new ArtilleryBulletType(3f, 25){{
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 11f;
                     collidesTiles = false;
-                    splashDamageRadius = 25f * 0.75f;
+                    splashDamageRadius = 8f * 1.65f;
                     splashDamage = 33f;
                     reloadMultiplier = 1.2f;
-                    ammoMultiplier = 3f;
+                    ammoMultiplier = 2f;
                     homingPower = 0.08f;
                     homingRange = 50f;
 
@@ -3319,13 +3320,13 @@ public class Blocks{
                     frontColor = Pal.siliconAmmoFront;
                     despawnEffect = Fx.hitBulletColor;
                 }},
-                Items.pyratite, new ArtilleryBulletType(3f, 25){{
+                Items.pyratite, new ArtilleryBulletType(3f, 30){{
                     hitEffect = Fx.blastExplosion;
                     knockback = 0.8f;
                     lifetime = 80f;
                     width = height = 13f;
                     collidesTiles = false;
-                    splashDamageRadius = 25f * 0.75f;
+                    splashDamageRadius = 8f * 3.5f;
                     splashDamage = 45f;
                     status = StatusEffects.burning;
                     statusDuration = 60f * 12f;
@@ -3333,15 +3334,18 @@ public class Blocks{
                     backColor = Pal.lightOrange;
                     makeFire = true;
                     trailEffect = Fx.incendTrail;
-                    ammoMultiplier = 4f;
+                    ammoMultiplier = 3f;
                     despawnEffect = Fx.hitBulletColor;
                 }}
             );
             targetAir = false;
+            maxAmmo = 10;
             reload = 60f;
             recoil = 2f;
             range = 235f;
-            inaccuracy = 1f;
+            velocityRnd = 0.15f;
+            scaleLifetimeOffset = 0.75f / 9f;
+            inaccuracy = 2f;
             shootCone = 10f;
             health = 260;
             shootSound = Sounds.bang;
