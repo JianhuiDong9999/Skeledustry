@@ -890,7 +890,7 @@ public class Blocks{
         }};
 
         multiPress = new GenericCrafter("multi-press"){{
-            requirements(Category.crafting, with(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50));
+            requirements(Category.crafting, with(Items.copper, 200, Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50));
 
             craftEffect = Fx.pulverizeMedium;
             outputItem = new ItemStack(Items.graphite, 2);
@@ -923,7 +923,7 @@ public class Blocks{
         }};
 
         siliconCrucible = new AttributeCrafter("silicon-crucible"){{
-            requirements(Category.crafting, with(Items.titanium, 120, Items.metaglass, 80, Items.plastanium, 35, Items.silicon, 60));
+            requirements(Category.crafting, with(Items.copper, 360, Items.titanium, 120, Items.metaglass, 80, Items.plastanium, 35, Items.silicon, 60));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.silicon, 8);
             craftTime = 90f;
@@ -956,7 +956,7 @@ public class Blocks{
         }};
 
         plastaniumCompressor = new GenericCrafter("plastanium-compressor"){{
-            requirements(Category.crafting, with(Items.silicon, 80, Items.lead, 115, Items.graphite, 60, Items.titanium, 80));
+            requirements(Category.crafting, with(Items.silicon, 80, Items.copper, 85, Items.lead, 115, Items.graphite, 60, Items.titanium, 80));
             hasItems = true;
             liquidCapacity = 60f;
             craftTime = 60f;
@@ -974,7 +974,7 @@ public class Blocks{
         }};
 
         phaseWeaver = new GenericCrafter("phase-weaver"){{
-            requirements(Category.crafting, with(Items.silicon, 130, Items.lead, 120, Items.thorium, 75));
+            requirements(Category.crafting, with(Items.copper, 160, Items.silicon, 130, Items.lead, 120, Items.thorium, 75));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.phaseFabric, 1);
             craftTime = 120f;
@@ -992,7 +992,7 @@ public class Blocks{
         }};
 
         surgeSmelter = new GenericCrafter("surge-smelter"){{
-            requirements(Category.crafting, with(Items.silicon, 80, Items.lead, 80, Items.thorium, 70));
+            requirements(Category.crafting, with(Items.copper, 180, Items.silicon, 80, Items.lead, 80, Items.thorium, 70));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.surgeAlloy, 1);
             craftTime = 75f;
@@ -2362,7 +2362,7 @@ public class Blocks{
         }};
 
         thermalGenerator = new ThermalGenerator("thermal-generator"){{
-            requirements(Category.power, with(Items.copper, 40, Items.graphite, 35, Items.lead, 50, Items.silicon, 35, Items.metaglass, 40));
+            requirements(Category.power, with(Items.copper, 60, Items.graphite, 35, Items.lead, 50, Items.silicon, 35, Items.metaglass, 40));
             powerProduction = 1.8f;
             generateEffect = Fx.redgeneratespark;
             effectChance = 0.011f;
@@ -2373,7 +2373,7 @@ public class Blocks{
         }};
 
         steamGenerator = new ConsumeGenerator("steam-generator"){{
-            requirements(Category.power, with(Items.copper, 35, Items.graphite, 25, Items.lead, 40, Items.silicon, 30));
+            requirements(Category.power, with(Items.copper, 60, Items.graphite, 25, Items.lead, 40, Items.silicon, 30));
             powerProduction = 5.5f;
             itemDuration = 90f;
             consumeLiquid(Liquids.water, 0.1f);
@@ -2403,7 +2403,7 @@ public class Blocks{
         }};
 
         differentialGenerator = new ConsumeGenerator("differential-generator"){{
-            requirements(Category.power, with(Items.copper, 70, Items.titanium, 50, Items.lead, 100, Items.silicon, 65, Items.metaglass, 50));
+            requirements(Category.power, with(Items.copper, 160, Items.titanium, 50, Items.lead, 100, Items.silicon, 65, Items.metaglass, 50));
             powerProduction = 18f;
             itemDuration = 220f;
             hasLiquids = true;
@@ -3383,7 +3383,7 @@ public class Blocks{
 
         //TODO these may work in space, but what's the point?
         lancer = new PowerTurret("lancer"){{
-            requirements(Category.turret, with(Items.copper, 60, Items.lead, 70, Items.silicon, 60, Items.titanium, 30));
+            requirements(Category.turret, with(Items.copper, 160, Items.lead, 70, Items.silicon, 60, Items.titanium, 30));
             range = 165f;
 
             shoot.firstShotDelay = 40f;
@@ -3476,7 +3476,7 @@ public class Blocks{
         }};
 
         swarmer = new ItemTurret("swarmer"){{
-            requirements(Category.turret, with(Items.graphite, 35, Items.titanium, 35, Items.plastanium, 45, Items.silicon, 30));
+            requirements(Category.turret, with(Items.copper, 120, Items.graphite, 35, Items.titanium, 35, Items.plastanium, 45, Items.silicon, 30));
             ammo(
                 Items.blastCompound, new MissileBulletType(3.7f, 10){{
                     width = 8f;
@@ -3768,7 +3768,7 @@ public class Blocks{
         }};
 
         ripple = new ItemTurret("ripple"){{
-            requirements(Category.turret, with(Items.copper, 150, Items.graphite, 135, Items.titanium, 60));
+            requirements(Category.turret, with(Items.copper, 225, Items.graphite, 135, Items.titanium, 60));
             ammo(
                 Items.graphite, new ArtilleryBulletType(3f, 20){{
                     knockback = 0.8f;
@@ -3879,7 +3879,7 @@ public class Blocks{
         }};
 
         cyclone = new ItemTurret("cyclone"){{
-            requirements(Category.turret, with(Items.copper, 200, Items.titanium, 125, Items.plastanium, 80));
+            requirements(Category.turret, with(Items.copper, 250, Items.titanium, 125, Items.plastanium, 80));
             ammo(
                 Items.metaglass, new FlakBulletType(4f, 6){{
                     ammoMultiplier = 2f;
@@ -3999,7 +3999,7 @@ public class Blocks{
         foreshadow = new ItemTurret("foreshadow"){{
             float brange = range = 500f;
 
-            requirements(Category.turret, with(Items.copper, 1000, Items.metaglass, 600, Items.surgeAlloy, 300, Items.plastanium, 200, Items.silicon, 600));
+            requirements(Category.turret, with(Items.copper, 1800, Items.metaglass, 600, Items.surgeAlloy, 300, Items.plastanium, 200, Items.silicon, 600));
             ammo(
                 Items.surgeAlloy, new RailBulletType(){{
                     shootEffect = Fx.instShoot;
@@ -4041,7 +4041,7 @@ public class Blocks{
         }};
 
         spectre = new ItemTurret("spectre"){{
-            requirements(Category.turret, with(Items.copper, 900, Items.graphite, 300, Items.surgeAlloy, 250, Items.plastanium, 175, Items.thorium, 250));
+            requirements(Category.turret, with(Items.copper, 1200, Items.graphite, 300, Items.surgeAlloy, 250, Items.plastanium, 175, Items.thorium, 250));
             ammo(
                 Items.graphite, new BasicBulletType(7.5f, 50){{
                     hitSize = 4.8f;
@@ -4106,7 +4106,7 @@ public class Blocks{
         }};
 
         meltdown = new LaserTurret("meltdown"){{
-            requirements(Category.turret, with(Items.copper, 1200, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 325));
+            requirements(Category.turret, with(Items.copper, 1600, Items.lead, 350, Items.graphite, 300, Items.surgeAlloy, 325, Items.silicon, 325));
             shootEffect = Fx.shootBigSmoke2;
             shootCone = 40f;
             recoil = 4f;
@@ -6063,7 +6063,7 @@ public class Blocks{
         }};
 
         multiplicativeReconstructor = new Reconstructor("multiplicative-reconstructor"){{
-            requirements(Category.units, with(Items.lead, 650, Items.silicon, 450, Items.titanium, 350, Items.thorium, 650));
+            requirements(Category.units, with(Items.copper, 540, Items.lead, 430, Items.silicon, 450, Items.titanium, 350, Items.thorium, 650));
 
             size = 5;
             consumePower(6f);
@@ -6083,7 +6083,7 @@ public class Blocks{
         }};
 
         exponentialReconstructor = new Reconstructor("exponential-reconstructor"){{
-            requirements(Category.units, with(Items.lead, 2000, Items.silicon, 1000, Items.titanium, 2000, Items.thorium, 750, Items.plastanium, 450, Items.phaseFabric, 600));
+            requirements(Category.units, with(Items.copper, 2400, Items.lead, 2000, Items.silicon, 1000, Items.titanium, 2000, Items.thorium, 750, Items.plastanium, 450, Items.phaseFabric, 600));
 
             size = 7;
             consumePower(13f);
@@ -6105,7 +6105,7 @@ public class Blocks{
         }};
 
         tetrativeReconstructor = new Reconstructor("tetrative-reconstructor"){{
-            requirements(Category.units, with(Items.lead, 4000, Items.silicon, 3000, Items.thorium, 1000, Items.plastanium, 600, Items.phaseFabric, 600, Items.surgeAlloy, 800));
+            requirements(Category.units, with(Items.copper, 4800, Items.lead, 4000, Items.silicon, 3000, Items.thorium, 1000, Items.plastanium, 600, Items.phaseFabric, 600, Items.surgeAlloy, 800));
 
             size = 9;
             consumePower(25f);
