@@ -3307,7 +3307,7 @@ public class Blocks{
                     width = height = 11f;
                     collidesTiles = false;
                     splashDamageRadius = 8f * 1.65f;
-                    splashDamage = 33f;
+                    splashDamage = 48f;
                     reloadMultiplier = 1.2f;
                     ammoMultiplier = 2f;
                     homingPower = 0.08f;
